@@ -47,7 +47,7 @@ try{
     // Send a success msg to the user or frontend
   res.status(200).json({
     success:true,
-    messag:"User successfully Signed Up",
+    message:"User successfully Signed Up",
 user
   })
 
@@ -55,7 +55,7 @@ user
 console.log(error)
 res.status(500).json({
     success :false,
-    messag:`Error in singing up ${error}`,
+    message:`Error in singing up ${error}`,
     error
 })
 }
@@ -149,7 +149,40 @@ res.status(500).json({
     }
 
  }
-  
+
+
+
+// LogOut
+export const logOut = async (req,res) =>{
+    try{
+        res.cookie("token", null, {
+            expires: new Date(Date.now()), 
+            httpOnly: true,
+        })
+        res.status(200).json({
+            success:true,
+            message:"Successfully Loggedout"
+        })
+
+    }catch(error){
+        console.log(error)
+        res.status(500).json({
+            success:false,
+            message:`Error in Loging out ${error}`,
+            error,
+        })
+        
+    }
+}
+
+ /*
+    *test
+    * route :http://localhost:8080/api/v1/auth/test
+    * discription :for testing the middlewares
+    */
+    export const testController = (req,res) =>{
+    res.send("protected Route")
+    }
 
 
 

@@ -18,6 +18,6 @@ import config from "./src/config/config.js";
 }) ()
 const PORT = config.PORT        
 app.listen(PORT,() =>{
-    console.log(`App is running at PORT : ${PORT} Sucessfully`.rainbow)
+    console.log(`App is running at PORT : ${PORT} Sucessfully`.bgBlue)
 })
 
