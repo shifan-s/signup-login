@@ -152,37 +152,33 @@ res.status(500).json({
 
 
 
-// LogOut
-export const logOut = async (req,res) =>{
-    try{
-        res.cookie("token", null, {
-            expires: new Date(Date.now()), 
-            httpOnly: true,
+//Logout
+
+export const logout = async (req, res) => {
+    try {
+        res.cookie("token",null,{
+            expires: new Date(Date.now()),
+            httponly: true,
         })
         res.status(200).json({
-            success:true,
-            message:"Successfully Loggedout"
+            success: true,
+            message: "successfully Logged out"
         })
-
-    }catch(error){
-        console.log(error)
+    } catch (error){
+        console.log(error);
         res.status(500).json({
-            success:false,
-            message:`Error in Loging out ${error}`,
+            success: false,
+            message: `Error in logging out ${error}`,
             error,
         })
-        
+         
     }
 }
 
- /*
-    *test
-    * route :http://localhost:8080/api/v1/auth/test
-    * discription :for testing the middlewares
-    */
-    export const testController = (req,res) =>{
-    res.send("protected Route")
-    }
+//test controllers
+export const testController = (req,res) =>{
+    res.send("protect route")
+}
 
 
 
