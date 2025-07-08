@@ -16,7 +16,7 @@ const Navbar = () => {
 
   const handleLogout = async () => {
     try {
-      const { data } = await axios.post("http://localhost:4000/api/v1/auth/logout");
+      const { data } = await axios.post("http://localhost:8080/api/v1/auth/logout");
       if (data.success) {
         toast.success(data.message);
         setAuth({ user: null, token: "" });
@@ -31,14 +31,14 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="relative h-20 bg-gradient-to-r from-blue-500 via-pink-400 to-blue-300 shadow-md flex items-center justify-between px-4 md:px-10">
+    <nav className="relative h-20 bg-gradient-to-r from-blue-500 via-purple-400 to-purple-300 shadow-md flex items-center justify-between px-4 md:px-10">
       {/* Logo */}
       <Link
         to="/"
         className="text-4xl font-black text-white tracking-widest font-serif hover:text-yellow-100"
         onClick={() => { setMobileMenuOpen(false); setDropdownOpen(false); }}
       >
-        Liza
+        E-comm
       </Link>
 
       {/* Mobile Toggle */}
@@ -82,7 +82,7 @@ const Navbar = () => {
         {!auth?.user ? (
           <>
             <Link to="/login" className="text-white hover:text-yellow-100 font-medium">Login</Link>
-            <Link to="/signup" className="px-4 py-1.5 rounded-full bg-white text-pink-600 font-semibold shadow hover:bg-yellow-50">Sign Up</Link>
+            <Link to="/signup" className="px-4 py-1.5 rounded-full bg-white text-purple-600 font-semibold shadow hover:bg-yellow-50">Sign Up</Link>
           </>
         ) : (
           <button onClick={handleLogout} className="text-white hover:text-yellow-100 font-medium" type="button">Logout</button>
@@ -91,7 +91,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="absolute top-20 left-0 w-full bg-gradient-to-r from-pink-500 via-orange-400 to-yellow-300 text-white flex flex-col items-center space-y-4 py-4 z-50 md:hidden">
+        <div className="absolute top-20 left-0 w-full bg-gradient-to-r from-blue-500 via-purple-400 to-purple-300 text-white flex flex-col items-center space-y-4 py-4 z-50 md:hidden">
           <Link to="/" onClick={() => setMobileMenuOpen(false)} className="hover:text-yellow-100">Home</Link>
 
           {auth?.user ? (

@@ -37,7 +37,7 @@ const Signup = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-600 px-4">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-100 to-purple-600 px-4">
       <div className="w-full max-w-md p-8 bg-white/90 rounded-xl shadow-lg backdrop-blur-sm">
         <Helmet>
           <title>Signup</title>

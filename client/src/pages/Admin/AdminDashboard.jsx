@@ -11,7 +11,7 @@ const AdminDashboard = () => {
       <div className="max-w-7xl mx-auto flex gap-10">
         <AdminMenu />
         <div className="py-6 space-y-6">
-          <InfoRow label="Name:" value={user?.name} className="text-pink-400 uppercase" />
+          <InfoRow label="Name:" value={user?.name} className="text-purple-400 uppercase" />
           <InfoRow label="Email:" value={user?.email} className="lowercase" />
           <InfoRow label="Contact:" value={user?.phone} className="uppercase" />
           <InfoRow label="Address:" value={user?.address} className="lowercase" />

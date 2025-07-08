@@ -15,6 +15,8 @@ import CreateProduct from "./pages/Admin/CreateProduct"
 import ErrorPages from "./pages/ErrorPages"
 import { AdminRoute } from "./components/routes/AdminRoute"
 import PrivateRoute from "./components/routes/PrivateRoute"
+import Product from "./pages/Admin/Product"
+import UpdateProduct from "./pages/Admin/UpdateProduct"
 
 
 function App() {
@@ -43,10 +45,13 @@ function App() {
           <Route path="admin/createcollection" element={<CreateCollection/>}/>
           <Route path="admin/createproduct" element={<CreateProduct/>}/>
           <Route path="admin/manageusers" element={<ManageUser/>}/>
+          <Route path="admin/product" element={<Product/>}/>
+          <Route path="admin/update-product/:slug" element={<UpdateProduct/>}/>
         </Route>
 
       
         <Route path="*" element={<ErrorPages />} />
+      
       </Route>
     </Routes>
     </>

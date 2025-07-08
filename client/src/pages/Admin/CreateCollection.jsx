@@ -129,7 +129,7 @@ if (data&& data.success) {
   </aside>
 
   <main className="w-full md:w-4/5 p-6 md:p-10">
-    <h1 className="text-xl text-cyan-400 font-semibold mb-8">Manage Collection</h1>
+    <h1 className="text-xl text-purple-400 font-semibold mb-8">Manage Collection</h1>
 
     <CollectionForm handleSubmit={handleSubmit} value={name} setValue={setName} />
 
