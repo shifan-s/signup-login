@@ -17,7 +17,8 @@ import { AdminRoute } from "./components/routes/AdminRoute"
 import PrivateRoute from "./components/routes/PrivateRoute"
 import Product from "./pages/Admin/Product"
 import UpdateProduct from "./pages/Admin/UpdateProduct"
-
+import SearchItems from "./pages/SearchItems"
+import Cart from "./pages/Cart"
 
 function App() {
   
@@ -31,7 +32,7 @@ function App() {
         <Route path="collection" element={<Collection />} />
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<Signup />} />
-
+       <Route path="search-items" element={<SearchItems />} />
       
         <Route path="dashboard" element={<PrivateRoute/>}>
           <Route path="user" element={<Dashboard />} />
@@ -39,6 +40,7 @@ function App() {
           <Route path="user/orders" element={<UserOrders/>} />
 
         </Route>
+        <Route path="cart" element={<Cart />} />
 
         <Route path="/dashboard" element={<AdminRoute/>}>
           <Route path="admin" element={<AdminDashboard/>}/>
@@ -53,6 +55,7 @@ function App() {
         <Route path="*" element={<ErrorPages />} />
       
       </Route>
+    
     </Routes>
     </>
   )
